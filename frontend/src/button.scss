@@ -1,0 +1,170 @@
+$neutral-color: #AAB2BD;
+$active-color: #0076FF;
+$like-color: #E8F5E9;
+$plus-color: #8CC152;
+$fav-color: #F6BB42;
+$thumb-color: #3b5998;
+
+@mixin button-color($color) {
+  &:before,
+  &:after {
+    color: $color;
+  }
+
+  &.is-active {
+    background: $color;
+  }
+}
+
+/* Reset button */
+button {
+  position: relative;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  outline: none;
+}
+
+.button {
+  z-index: 1;
+  margin: .5em;
+  color: $neutral-color;
+  font-size: 1rem;
+  padding: .2em .6em;
+  max-width: 2.4em;
+  min-height: 2.4em;
+  border-radius: .2em;
+  background: lighten($neutral-color, 25%);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, .1); 
+  outline: none;
+  transition: background .2s;
+  
+  i {
+    transition: .2s;
+  }
+  
+  &:hover,
+  &:focus {
+    color: darken($neutral-color, 10%);
+    
+    &:active i {
+      transform: scale(.8);
+    }
+  }
+  
+  &.rounded {
+    border-radius: 2em;
+  }
+  
+  /* Loader */
+  &.is-loading {
+    pointer-events: none;
+    position: relative;
+    color: transparent !important;
+
+    &:after {
+      z-index: 1;
+      content: '';     
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      height: 1em;
+      width: 1em;
+      margin-left: -.5em;
+      margin-top: -.5em;
+      animation: loader-animation 600ms infinite linear;
+      font-size: inherit;
+      color: $neutral-color !important;
+      border: .2em solid;
+      border-radius: .7em;
+      border-right-color: transparent;
+      border-top-color: transparent;
+    }
+  }
+  
+  @keyframes loader-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Animation */
+  &.is-active {
+    z-index: 2;
+    color: white;
+    background: $active-color;
+    animation: .8s;
+    
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -2px;
+      margin-top: -2px;
+      width: 6px;
+      height: 6px;
+      border-radius: 100%;
+      transform: scale(0);
+      color: $neutral-color;
+      border: 1px solid transparent;
+      box-shadow: -.8em 0 0 -2px, .8em 0 0 -2px, 0 -.8em 0 -2px, 0 .8em 0 -2px, -.6em -.6em 0 -2px, -.6em .6em 0 -2px, .6em -.6em 0 -2px, .6em .6em 0 -2px;
+    }   
+  
+    &:before {
+      animation: effect-01-animation .8s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    }
+    &:after {
+      animation: effect-02-animation .6s cubic-bezier(0.175, 0.885, 0.320, 1.275);
+    }
+  }
+  
+  @keyframes effect-01-animation {
+    from { 
+      transform: rotate(-15deg) scale(0); 
+    }
+    40% { 
+      opacity: 1; 
+    }
+    to { 
+      transform: rotate(-30deg) scale(2.5); 
+      opacity: 0;
+    }
+  }
+  
+  @keyframes effect-02-animation {
+    from { 
+      transform: rotate(10deg) scale(0); 
+    }
+    40% { 
+      opacity: 1; 
+    }
+    to { 
+      transform: rotate(30deg) scale(2); 
+      opacity: 0; 
+    }
+  }
+  
+  /* Buttons colors variants */
+  &.like {
+    @include button-color($like-color);
+  }
+  
+  &.plus {
+    @include button-color($plus-color);
+  }
+  
+  &.fav {
+    @include button-color($fav-color);
+  }
+  
+  &.thumb {
+    @include button-color($thumb-color);
+  }
+}

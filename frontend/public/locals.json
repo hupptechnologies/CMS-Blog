@@ -1,0 +1,90 @@
+{
+  "form": {
+    "add": "Add",
+    "email": "email",
+    "image": "Image",
+    "password": "password",
+    "username": "username"
+  },
+  "modal": {
+    "item": "Item",
+    "close": "Close",
+    "cancel": "Cancel",
+    "deleted": "deleted",
+    "archived": "archived",
+    "published": "published",
+    "scheduled": "scheduled",
+    "modalTitle": "Are you sure you want to ",
+    "modalContent": "? This action cannot be undone."
+  },
+  "table": {
+    "date": "Date",
+    "edit": "Edit",
+    "name": "Name",
+    "role": "Role",
+    "action": "Action",
+    "status": "Status",
+    "category": "Category",
+    "description": "Description"
+  },
+  "title": "CMS Dashboard",
+  "common": {
+    "all": "All",
+    "log": "Log",
+    "see": "See",
+    "auth": "auth pages",
+    "back": "Back to",
+    "blog": "Blog →",
+    "posts": "posts",
+    "users": "users",
+    "APIlog": "API logs",
+    "update": "update",
+    "details": "Details",
+    "profile": "profile",
+    "signout": "sign out",
+    "filePara": "Upload or drag & drop your file SVG, PNG, JPG or GIF.",
+    "dashboard": "dashboard",
+    "activities": "activities",
+    "categories": "categories",
+    "searchHere": "Search here",
+    "selectFile": "Select a file"
+  },
+  "blogTitle": ["Our Blog Post", "Create new Blog post"],
+  "breadcrumb": {
+    "home": {
+      "title": "home",
+      "newUsers": "New Users",
+      "totalUsers": "Total Users",
+      "activeUsers": "Active Users",
+      "userStatistics": "User Statistics"
+    },
+    "posts": {
+      "para": "Welcome to our blog! Feel free to share your thoughts and insights. Your email address will not be published. Required fields are marked with an asterisk (*).",
+      "describe": "Describe",
+      "ourNewFeed": "OUR NEWS FEED",
+      "selectTags": "Select tags",
+      "chooseState": "Choose a state",
+      "selectState": "Select state",
+      "createNewBlog": "Add your new blog",
+      "selectCategories": "Select categories"
+    },
+    "profile": {
+      "title": "Your personal info",
+      "idNumber": "Your Id No:",
+      "username": "Your UserName:",
+      "createdDate": "Create date:",
+      "editProfile": "Edit your profile"
+    },
+    "activities": {
+      "para": "Stay updated with the latest actions and interactions within your account. Here, you can track your recent activities, including logins, blog views, likes, and comments."
+    }
+  },
+  "pagination": {
+    "of": "of",
+    "to": "to",
+    "next": "Next",
+    "prev": "Prev",
+    "entries": "Entries",
+    "showing": "Showing"
+  }
+}

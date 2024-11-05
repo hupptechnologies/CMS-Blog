@@ -1,0 +1,141 @@
+CREATE TABLE activities (
+    id INTEGER,
+    user_id INTEGER,
+    activity_type VARCHAR(50),
+    description TEXT,
+    blog_id INTEGER,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE blog_manage (
+    id INTEGER,
+    blog_id INTEGER,
+    status USER-DEFINED,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE blogs (
+    id INTEGER,
+    title VARCHAR(255),
+    content TEXT,
+    tags ARRAY,
+    categories ARRAY,
+    img VARCHAR(255),
+    likes INTEGER,
+    views INTEGER,
+    date TIMESTAMP WITH TIME ZONE,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE categories (
+    id INTEGER,
+    name TEXT,
+    description TEXT,
+    status USER-DEFINED,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE comments (
+    id INTEGER,
+    blog_id INTEGER,
+    author_id INTEGER,
+    content TEXT,
+    status USER-DEFINED,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE likes (
+    user_id INTEGER,
+    blog_id INTEGER,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE log (
+    id INTEGER,
+    message TEXT,
+    level VARCHAR(50),
+    additional_info JSONB,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE log_2024_09 (
+    id INTEGER,
+    message TEXT,
+    level VARCHAR(50),
+    additional_info JSONB,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE log_2024_10 (
+    id INTEGER,
+    message TEXT,
+    level VARCHAR(50),
+    additional_info JSONB,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE log_2024_11 (
+    id INTEGER,
+    message TEXT,
+    level VARCHAR(50),
+    additional_info JSONB,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE replies (
+    id INTEGER,
+    comment_id INTEGER,
+    author_id INTEGER,
+    content TEXT,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE tour_steps (
+    id INTEGER,
+    target VARCHAR(255),
+    content TEXT,
+    placement VARCHAR(255),
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE translations (
+    id INTEGER,
+    language VARCHAR(255),
+    status VARCHAR(255),
+    translations JSONB,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);
+
+CREATE TABLE users (
+    id INTEGER,
+    username VARCHAR(50),
+    email VARCHAR(100),
+    password VARCHAR(255),
+    role USER-DEFINED,
+    img VARCHAR(255),
+    status USER-DEFINED,
+    has_seen_welcome_message BOOLEAN,
+    access JSONB,
+    created_at TIMESTAMP WITH TIME ZONE,
+    updated_at TIMESTAMP WITH TIME ZONE
+);
+
+CREATE TABLE views (
+    blog_id INTEGER,
+    user_id INTEGER,
+    created_at TIMESTAMP WITHOUT TIME ZONE,
+    updated_at TIMESTAMP WITHOUT TIME ZONE
+);

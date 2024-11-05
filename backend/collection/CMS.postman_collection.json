@@ -1,0 +1,1641 @@
+{
+	"info": {
+		"_postman_id": "be35e04b-132a-4fcc-957b-38006eda9ede",
+		"name": "CMS",
+		"description": "# 🚀 Get started here\n\nThis template guides you through CRUD operations (GET, POST, PUT, DELETE), variables, and tests.\n\n## 🔖 **How to use this template**\n\n#### **Step 1: Send requests**\n\nRESTful APIs allow you to perform CRUD operations using the POST, GET, PUT, and DELETE HTTP methods.\n\nThis collection contains each of these [request](https://learning.postman.com/docs/sending-requests/requests/) types. Open each request and click \"Send\" to see what happens.\n\n#### **Step 2: View responses**\n\nObserve the response tab for status code (200 OK), response time, and size.\n\n#### **Step 3: Send new Body data**\n\nUpdate or add new data in \"Body\" in the POST request. Typically, Body data is also used in PUT request.\n\n```\n{\n    \"name\": \"Add your name in the body\"\n}\n\n ```\n\n#### **Step 4: Update the variable**\n\nVariables enable you to store and reuse values in Postman. We have created a [variable](https://learning.postman.com/docs/sending-requests/variables/) called `base_url` with the sample request [https://postman-api-learner.glitch.me](https://postman-api-learner.glitch.me). Replace it with your API endpoint to customize this collection.\n\n#### **Step 5: Add tests in the \"Scripts\" tab**\n\nAdding tests to your requests can help you confirm that your API is working as expected. You can write test scripts in JavaScript and view the output in the \"Test Results\" tab.\n\n<img src=\"https://content.pstmn.io/fa30ea0a-373d-4545-a668-e7b283cca343/aW1hZ2UucG5n\" width=\"2162\" height=\"1530\">\n\n## 💪 Pro tips\n\n- Use folders to group related requests and organize the collection.\n    \n- Add more [scripts](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/) to verify if the API works as expected and execute workflows.\n    \n\n## 💡Related templates\n\n[API testing basics](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9a37a28-055b-49cd-8c7e-97494a21eb54&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[API documentation](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=e9c28f47-1253-44af-a2f3-20dce4da1f18&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)  \n[Authorization methods](https://go.postman.co/redirect/workspace?type=personal&collectionTemplateId=31a9a6ed-4cdf-4ced-984c-d12c9aec1c27&sourceTemplateId=ddb19591-3097-41cf-82af-c84273e56719)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33943909"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "fetchUserProfile",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/profile?id={{userId}}",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "Path:`/controller/users/profileUser.js`\n\nControllerName: `fetchUserProfileController`"
+					},
+					"response": []
+				},
+				{
+					"name": "userProfileUpdate",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1MDk1ODgsImV4cCI6MTcyMzExNDM4OH0.pR9sfyvDp5xB7xCucHc0_Ctk1_xjS6bQHaYG_gkdroY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"eve.holt\",\n    \"img\":\"https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1480&q=80\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/profile?id={{userId}}",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"profile"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "Path: `/controller/users/profileUser.js`  \nControllerName: `updateUserProfileController`"
+					},
+					"response": []
+				},
+				{
+					"name": "deActivateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUzNTI0MjIsImV4cCI6MTcyNTk1NzIyMn0.K6J-N2Y4tqiZ_WxRt4fevGyVp09yhoVQZ9e7d89hSi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/user?id=1&userId=2&type=active",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "2"
+								},
+								{
+									"key": "type",
+									"value": "active"
+								}
+							]
+						},
+						"description": "Path: `/controller/users/deActivateUser.js`  \nControllerName: `deleteUserController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "blogs",
+			"item": [
+				{
+					"name": "createBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQxMzQyMTksImV4cCI6MTcyNDczOTAxOX0.baYKc4a1ZJ9ESNs51MYW1pepPQB1FkG7NnnsUSK6l1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"img\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg12Gs3-Lo3DtkL7G_BYYSapF-OU0vnLbebQ&s\",\n    \"title\": \"Embracing the Future: The Benefits of Remote Work\",\n    \"date\": \"Feb 2, 2019\",\n    \"views\": \"0\",\n    \"likes\": \"0\",\n    \"categories\": [\n        \"1\"\n    ],\n    \"tags\": [\n        \"Blockchain\"\n    ],\n    \"content\": \"<p>The shift towards remote work has revolutionized the modern workplace, offering numerous benefits that extend beyond the traditional office setting. One of the primary advantages is increased flexibility. Remote work allows employees to design their schedules around personal commitments, leading to a better work-life balance. This flexibility can result in higher job satisfaction and reduced stress, as individuals can tailor their work environment to suit their needs and preferences.</p>\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/create/blog",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"create",
+								"blog"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "published",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Path: `/controller/blogs/createBlog.js`  \nControllerName: `createBlogController`"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllBlogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQxMzQyMTksImV4cCI6MTcyNDczOTAxOX0.baYKc4a1ZJ9ESNs51MYW1pepPQB1FkG7NnnsUSK6l1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"\",\n    \"search\":\"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/blogs?page=1&limit=10",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"blogs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								}
+							]
+						},
+						"description": "Path:`/controller/blogs/getAllBlogs.js`\n\nControllerName: `fetchAllBlogsController`"
+					},
+					"response": []
+				},
+				{
+					"name": "likeBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1MDk1ODgsImV4cCI6MTcyMzExNDM4OH0.pR9sfyvDp5xB7xCucHc0_Ctk1_xjS6bQHaYG_gkdroY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"blog_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/blog/like",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"like"
+							]
+						},
+						"description": "Path: `/controller/likes/likeBlog.js`  \nControllerName: `likeBlogController`"
+					},
+					"response": []
+				},
+				{
+					"name": "viewBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1NzE1NzcsImV4cCI6MTcyMzE3NjM3N30.qdQX4t0C_vGD3WahZDp5HNQcLzWQElc3v-eUmDQVrNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2,\n    \"blog_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/blog/view",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"blog",
+								"view"
+							]
+						},
+						"description": "Path: `/controller/views/viewBlog.js`  \nControllerName: `viewBlogController`"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBlogStatus",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blog_id\": 2,\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/blog",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"blog"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Path: `/controller/blogs/updateBlogStatus.js`  \nControllerName: `updateStatusBlogController`"
+					},
+					"response": []
+				},
+				{
+					"name": "updateBlog",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQxMzQyMTksImV4cCI6MTcyNDczOTAxOX0.baYKc4a1ZJ9ESNs51MYW1pepPQB1FkG7NnnsUSK6l1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blog_id\": 17,\n    \"title\": \"Embracing the Future: The Benefits of Remote Work\",\n    \"img\": \"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg12Gs3-Lo3DtkL7G_BYYSapF-OU0vnLbebQ&s\",\n    \"content\": \"<p>The shift towards remote work has revolutionized the modern workplace, offering numerous benefits that extend beyond the traditional office setting. One of the primary advantages is increased flexibility. Remote work allows employees to design their schedules around personal commitments, leading to a better work-life balance. This flexibility can result in higher job satisfaction and reduced stress, as individuals can tailor their work environment to suit their needs and preferences.</p>\",\n    \"categories\": [\n        \"1\"\n    ],\n    \"status\": \"published\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/updateBlog?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"updateBlog"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "`Path: /controller/blogs/updateBlog.js`\n\ncontrolleName: `updateBlogController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "dashboard",
+			"item": [
+				{
+					"name": "getStatisticsUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1NzE1NzcsImV4cCI6MTcyMzE3NjM3N30.qdQX4t0C_vGD3WahZDp5HNQcLzWQElc3v-eUmDQVrNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/user/statistic?id={{userId}}",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"statistic"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "Path: `/controller/users/loginUser.js`  \nControllerName: `getUserStatisticsController`"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllUsers",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUyNjIwMTQsImV4cCI6MTcyNTg2NjgxNH0.H1pXSwctekQSald_6ETrNTtI6H64qu5p38Q-uWPxv9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/users?id=1&search=&startDate=2024-09-01T18:30:00.000Z&endDate=2024-09-02T18:30:00.000Z",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"users"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "search",
+									"value": ""
+								},
+								{
+									"key": "startDate",
+									"value": "2024-09-01T18:30:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-09-02T18:30:00.000Z"
+								}
+							]
+						},
+						"description": "Path: `/controller/users/getAllUsers.js`  \nControllerName: `fetchAllUsersController`"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchUserActivities",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\": \"\",\n    \"startDate\": \"\",\n    \"endDate\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/user/activity?id={{userId}}&page=2&limit=2",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"activity"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "page",
+									"value": "2"
+								},
+								{
+									"key": "limit",
+									"value": "2"
+								}
+							]
+						},
+						"description": "Path: `/controller/dashboard/logActivity.js`  \nControllerName: `fetchAllActivitiesController`"
+					},
+					"response": []
+				},
+				{
+					"name": "logoutAnyUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQ5OTcwMDUsImV4cCI6MTcyNTYwMTgwNX0.HYiEwBdyTOJ7IJnQrGhaFbT50cKy3lh8eiFCMJp5YLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"message\": {\n        \"listen\": \"logout\",\n        \"user\": 2,\n        \"message\": \"logout successfuly!\"\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3008/api/send-notification?id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3008",
+							"path": [
+								"api",
+								"send-notification"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "path:`/controller/notification/pushNotification.js`\n\ncontrollerName: `pushNotificationController`"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchUserActivityTypes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1NzE1NzcsImV4cCI6MTcyMzE3NjM3N30.qdQX4t0C_vGD3WahZDp5HNQcLzWQElc3v-eUmDQVrNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/user/activityTypes?id={{userId}}&startDate=2024-09-01T18:30:00.000Z&endDate=2024-09-02T18:30:00.000Z",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"activityTypes"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-09-01T18:30:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-09-02T18:30:00.000Z"
+								}
+							]
+						},
+						"description": "Path: `/controller/dashboard/logActivity.js`  \nControllerName: `countActivityTypesController`"
+					},
+					"response": []
+				},
+				{
+					"name": "userActivityDelete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUzNTI0MjIsImV4cCI6MTcyNTk1NzIyMn0.K6J-N2Y4tqiZ_WxRt4fevGyVp09yhoVQZ9e7d89hSi8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/user/activity?id=1&activityId=164",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"activity"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "activityId",
+									"value": "164"
+								}
+							]
+						},
+						"description": "Path:`/controller/activities/deleteSingleActivity.js`\n\nControllerName: `deleteActivityById`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "comments",
+			"item": [
+				{
+					"name": "createComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"blog_id\": 1,\n    \"author_id\": 2,\n    \"content\": \"<p>Hey <strong>loved</strong> your blog! Can you show me some other ways to <del><em>fix</em></del>  solve this?🤔<br>Here's my <a href='https://www.linkedin.com/in/riya-negi-8879631a9/' target='_blank'>Linkedin Profile</a> to reach out.</p>\",\n    \"replies\": [\n        {\n            \"userId\": 2,\n            \"text\": \"<p>Sure, try adding this line to your code. You need to pass <span style='color: rgb(147,101,184);'>event</span> as a parameter.</p>\"\n        },\n        {\n            \"userId\": 2,\n            \"text\": \"<p><strong>OMG!</strong> it worked! <span style='color: rgb(209,72,65);'>DO NOT stop this blog series!!!!</span> 💃</p>\"\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/comments",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						},
+						"description": "Path: `/controller/comment/createComment.js`  \nControllerName: `createCommentController`"
+					},
+					"response": []
+				},
+				{
+					"name": "getAllComments",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/comments",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comments"
+							]
+						},
+						"description": "Path: `/controller/comment/getComment.js`  \nControllerName: `getAllCommentsController`"
+					},
+					"response": []
+				},
+				{
+					"name": "getCommentById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/comments/1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"1"
+							]
+						},
+						"description": "Path: `/controller/comment/getComment.js`  \nControllerName: `getCommentByIdController`"
+					},
+					"response": []
+				},
+				{
+					"name": "updateComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"content\": \"hii\",\n    \"status\": \"pending\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/comments/1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"1"
+							]
+						},
+						"description": "Path: `/controller/comment/updateComment.js`  \nControllerName: `updateCommentController`"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteComment",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/comments/7",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comments",
+								"7"
+							]
+						},
+						"description": "Path: `/controller/comment/deleteComment.js`\n\nControllerName: `deleteCommentController`"
+					},
+					"response": []
+				},
+				{
+					"name": "getCommentByBlogId",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQxMzQyMTksImV4cCI6MTcyNDczOTAxOX0.baYKc4a1ZJ9ESNs51MYW1pepPQB1FkG7NnnsUSK6l1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/comment/blog?blogId=3",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"comment",
+								"blog"
+							],
+							"query": [
+								{
+									"key": "blogId",
+									"value": "3"
+								}
+							]
+						},
+						"description": "Path: `/controller/comment/getComment.js`  \nControllerName: `getCommentByBlogIdController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "category",
+			"item": [
+				{
+					"name": "deleteCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjM3ODc5NDYsImV4cCI6MTcyNDM5Mjc0Nn0.Y3rgy-w_o6EFVQDrY-U5mtVCWcobtYEDWa40hcYLRrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/categories?id=1&catId=8",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "catId",
+									"value": "8"
+								}
+							]
+						},
+						"description": "Path: `/controller/categories/deleteCategory.js`  \nControllerName: `deleteCategoryController`"
+					},
+					"response": []
+				},
+				{
+					"name": "fetchAllCategories",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjM3ODc5NDYsImV4cCI6MTcyNDM5Mjc0Nn0.Y3rgy-w_o6EFVQDrY-U5mtVCWcobtYEDWa40hcYLRrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"type\":\"\",\n    \"search\": \"f\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/get-categories?id=1&page=1&limit=4",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"get-categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "4"
+								},
+								{
+									"key": "type",
+									"value": "\"\"",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Path: `/controller/categories/getCategories.js`  \nControllerName: `fetchAllCategoriesController`"
+					},
+					"response": []
+				},
+				{
+					"name": "createCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjM3ODc5NDYsImV4cCI6MTcyNDM5Mjc0Nn0.Y3rgy-w_o6EFVQDrY-U5mtVCWcobtYEDWa40hcYLRrs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"catName\": \"Food\", //required\n    \"description\":\"\" // optional\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/categories?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"categories"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Path: `/controller/categories/AddCategory.js`  \nControllerName: `createCategoryController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "logs",
+			"item": [
+				{
+					"name": "fetchAllLogs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUzMzc3OTUsImV4cCI6MTcyNTk0MjU5NX0.1tua8zutVQkCb22rk1x_UxxzabnVSy_2h7vmaHOlkWs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/logs?id=1&page=1&limit=10&type=200&startDate=2024-09-01T18:30:00.000Z&endDate=2024-09-02T18:30:00.000Z",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"logs"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "type",
+									"value": "200"
+								},
+								{
+									"key": "startDate",
+									"value": "2024-09-01T18:30:00.000Z"
+								},
+								{
+									"key": "endDate",
+									"value": "2024-09-02T18:30:00.000Z"
+								}
+							]
+						},
+						"description": "Path: `/controller/logs/fetchLogs.js`  \nControllerName: `fetchAllLogsController`"
+					},
+					"response": []
+				},
+				{
+					"name": "deleteLogs",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI2MDM0MDEsImV4cCI6MTcyMzIwODIwMX0.RBlfCMLnAYe_wOssGmKwMYSMGwtpzGsNXJRx1X_g9Pw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/logs?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"logs"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"disabled": true
+								},
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Path: `/controller/logs/deleteAllLog.js`  \nControllerName: `deleteAllLogController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "logoutUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjI1NzE1NzcsImV4cCI6MTcyMzE3NjM3N30.qdQX4t0C_vGD3WahZDp5HNQcLzWQElc3v-eUmDQVrNY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/user/logout?id={{userId}}",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"user",
+								"logout"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "{{userId}}"
+								}
+							]
+						},
+						"description": "Path: `/controller/users/loginUser.js`  \nControllerName: `logoutUserController`"
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUyNjIwMTQsImV4cCI6MTcyNTg2NjgxNH0.H1pXSwctekQSald_6ETrNTtI6H64qu5p38Q-uWPxv9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"user10\",\n    \"email\": \"user10@gmail.com\",\n    \"password\": \"user10pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/signup",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"signup"
+							]
+						},
+						"description": "Path: `/controller/users/createUser.js`  \nControllerName: `createUserController`"
+					},
+					"response": []
+				},
+				{
+					"name": "loginUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"user1\",\n    \"password\":\"user2pass\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/login",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						},
+						"description": "Path: `/controller/users/loginUser.js`  \nControllerName: `loginUserController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "translation",
+			"item": [
+				{
+					"name": "createTranslation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjUyNjIwMTQsImV4cCI6MTcyNTg2NjgxNH0.H1pXSwctekQSald_6ETrNTtI6H64qu5p38Q-uWPxv9c",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"language\": \"fi-FI\",\n    \"translations\": {\n        \"form\": {\n            \"add\": \"Lisätä\",\n            \"email\": \"sähköposti\",\n            \"image\": \"Kuva\",\n            \"password\": \"salasana\",\n            \"username\": \"käyttäjätunnus\"\n        },\n        \"modal\": {\n            \"item\": \"Tuote\",\n            \"close\": \"Lähellä\",\n            \"cancel\": \"Peruuttaa\",\n            \"deleted\": \"poistettu\",\n            \"archived\": \"arkistoitu\",\n            \"published\": \"julkaistu\",\n            \"scheduled\": \"ajoitettu\",\n            \"modalTitle\": \"Oletko varma, että haluat \",\n            \"modalContent\": \"? \"\n        },\n        \"table\": {\n            \"date\": \"Päivämäärä\",\n            \"edit\": \"Muokata\",\n            \"name\": \"Nimi\",\n            \"role\": \"Rooli\",\n            \"action\": \"Toiminta\",\n            \"status\": \"Status\",\n            \"category\": \"Luokka\",\n            \"description\": \"Kuvaus\"\n        },\n        \"title\": \"CMS-hallintapaneeli\",\n        \"common\": {\n            \"all\": \"Kaikki\",\n            \"log\": \"Loki\",\n            \"see\": \"Katso\",\n            \"auth\": \"todennussivut\",\n            \"back\": \"Takaisin\",\n            \"blog\": \"Blogi →\",\n            \"posts\": \"viestit\",\n            \"users\": \"käyttäjiä\",\n            \"APIlog\": \"API-lokit\",\n            \"update\": \"päivittää\",\n            \"details\": \"Yksityiskohdat\",\n            \"profile\": \"profiili\",\n            \"signout\": \"kirjaudu ulos\",\n            \"filePara\": \"Lataa tai vedä ja pudota tiedostosi SVG-, PNG-, JPG- tai GIF-muodossa.\",\n            \"dashboard\": \"kojelauta\",\n            \"activities\": \"toimintaa\",\n            \"categories\": \"luokat\",\n            \"searchHere\": \"Hae tästä\",\n            \"selectFile\": \"Valitse tiedosto\"\n        },\n        \"blogTitle\": [\n            \"Blogikirjoituksemme\",\n            \"Luo uusi blogiteksti\"\n        ],\n        \"breadcrumb\": {\n            \"home\": {\n                \"title\": \"kotiin\",\n                \"newUsers\": \"Uusia käyttäjiä\",\n                \"totalUsers\": \"Käyttäjiä yhteensä\",\n                \"activeUsers\": \"Aktiiviset käyttäjät\",\n                \"userStatistics\": \"Käyttäjätilastot\"\n            },\n            \"posts\": {\n                \"para\": \"Tervetuloa blogiimme! \",\n                \"describe\": \"Kuvaile\",\n                \"ourNewFeed\": \"UUTISSYÖTTEMME\",\n                \"selectTags\": \"Valitse tunnisteet\",\n                \"chooseState\": \"Valitse osavaltio\",\n                \"selectState\": \"Valitse osavaltio\",\n                \"createNewBlog\": \"Lisää uusi blogisi\",\n                \"selectCategories\": \"Valitse luokat\"\n            },\n            \"profile\": {\n                \"title\": \"Henkilötietosi\",\n                \"idNumber\": \"Tunnusnumerosi:\",\n                \"username\": \"Käyttäjänimesi:\",\n                \"createdDate\": \"Luontipäivämäärä:\",\n                \"editProfile\": \"Muokkaa profiiliasi\"\n            },\n            \"activities\": {\n                \"para\": \"Pysy ajan tasalla tilisi viimeisimmistä toiminnoista ja vuorovaikutuksista. \"\n            }\n        },\n        \"pagination\": {\n            \"of\": \"/\",\n            \"to\": \"to\",\n            \"next\": \"Seuraavaksi\",\n            \"prev\": \"Ed\",\n            \"entries\": \"merkinnät\",\n            \"showing\": \"Näytetään\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/translate?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"translate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Path:`/controller/translations/createTranslation.js`\n\nControllerName: `createTranslationController`"
+					},
+					"response": []
+				},
+				{
+					"name": "getTranslations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQxMzQyMTksImV4cCI6MTcyNDczOTAxOX0.baYKc4a1ZJ9ESNs51MYW1pepPQB1FkG7NnnsUSK6l1U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/translate?id=1&language=fi-FI",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"translate"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "fi-FI"
+								},
+								{
+									"key": "type",
+									"value": "all",
+									"disabled": true
+								}
+							]
+						},
+						"description": "Path: `/controller/translations/getTranslation.js`\n\nControllerName: `fetchTranslationsController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tourSteps",
+			"item": [
+				{
+					"name": "addTourContent",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQ5OTcwMDUsImV4cCI6MTcyNTYwMTgwNX0.HYiEwBdyTOJ7IJnQrGhaFbT50cKy3lh8eiFCMJp5YLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"target\": \".dashboard-page\",\n        \"content\": \"This is your sidebar where you can navigate through different pages. Click on the items to switch between different sections of the dashboard.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".language-selection\",\n        \"content\": \"Use this dropdown to select your preferred language for the application. This will help you view content in the language you are most comfortable with.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".active-user-check\",\n        \"content\": \"This metric shows the number of active users currently engaging with the platform. Active users are those who have interacted with the system within a specific time frame, such as the last 24 hours or week. Monitoring this helps you understand user engagement and activity levels.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".new-user-check\",\n        \"content\": \"This count displays the number of new users who have recently joined the platform. New users are those who have registered or signed up within a specific period, such as the last month. This metric helps track user acquisition and growth trends.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".total-user-check\",\n        \"content\": \"This metric represents the total number of users registered on the platform. It includes all users, regardless of their activity status. This overall count provides a snapshot of your platform's user base size and growth over time.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".users-statistics-chart\",\n        \"content\": \"This chart displays the total number of users registered on the platform. It includes all users, regardless of their activity status. This metric provides a comprehensive overview of your platform's user base size and tracks its growth over time.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".profile-page\",\n        \"content\": \"This is the profile page where you can view and edit your profile details.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".profile-show-page\",\n        \"content\": \"This is your profile page where you can view your personal details, such as your name, email, and other profile information. Here, you can see the current information and how it is displayed to others.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".profile-edit-page\",\n        \"content\": \"This is the profile edit page where you can modify your personal details. Update your name, email, pass and other information here. Make sure to save any changes you make to keep your profile up to date.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".users-page\",\n        \"content\": \"Here you can view and manage users. You can search, filter, and view details about each user.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".users-table-page\",\n        \"content\": \"On this page, you can view and manage users. The table is divided into columns: \\n\\n- **Name**: Displays the user's full name.\\n- **Role**: Shows the user's role within the platform (e.g., Admin, User).\\n- **Status**: Indicates the current status of the user (e.g., Active, Inactive).\\n- **Date**: Represents the date when the user was added or last updated. \\n\\nYou can search for specific users, apply filters to narrow down the list, and view details by selecting individual entries.\",\n        \"placement\": \"bottom\"\n    },\n    {\n        \"target\": \".post-page\",\n        \"content\": \"This section allows you to create, edit, and manage blog posts. You can also view post details here.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".activities-page\",\n        \"content\": \"In this section, you can track various activities and events that are important for your dashboard.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".log-page\",\n        \"content\": \"View system logs and other important records here. This can help in monitoring and debugging.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".category-page\",\n        \"content\": \"Manage categories and tags for your posts here. You can add, edit, or remove categories and tags.\",\n        \"placement\": \"right\"\n    },\n    {\n        \"target\": \".signout-button\",\n        \"content\": \"Click here to sign out of your account. Make sure to save any changes before logging out.\",\n        \"placement\": \"right\"\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/tourStep?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"tourStep"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Path: `controller/tourSteps/addTourContent.js`\n\nControllerName: `createTourContentController`"
+					},
+					"response": []
+				},
+				{
+					"name": "getTourSteps",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjQ5OTcwMDUsImV4cCI6MTcyNTYwMTgwNX0.HYiEwBdyTOJ7IJnQrGhaFbT50cKy3lh8eiFCMJp5YLg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/tourStep?id=1",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"tourStep"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						},
+						"description": "Path: `controller/tourSteps/getTourSteps.js`\n\nControllerName: `fetchTourStepsController`"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "adminAccess",
+			"item": [
+				{
+					"name": "fetchAllAdmins",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidXNlcjEwIiwiaWF0IjoxNzI1NTk4Nzg1LCJleHAiOjE3MjYyMDM1ODV9.OvF21jFM9cdtB8bCfxH6kGK6s8dW_1NBi5M2Ma2A8zc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{cms_url}}/api/admins?id=6",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"admins"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUserAccess",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjYsInVzZXJuYW1lIjoidXNlcjEwIiwiaWF0IjoxNzI1NTk4Nzg1LCJleHAiOjE3MjYyMDM1ODV9.OvF21jFM9cdtB8bCfxH6kGK6s8dW_1NBi5M2Ma2A8zc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"id\": 6,\n    \"access\": {\n        \"0\": {\n            \"page\": true\n        },\n        \"1\": {\n            \"page\": true,\n            \"actions\": {\n                \"edit\": true\n            }\n        },\n        \"2\": {\n            \"page\": true,\n            \"actions\": {\n                \"date\": true,\n                \"delete\": true,\n                \"restore\": true,\n                \"logout\": true,\n                \"select\": true,\n                \"search\": true\n            }\n        },\n        \"3\": {\n            \"page\": true,\n            \"actions\": {\n                \"add\": true,\n                \"date\": true,\n                \"select\": true,\n                \"delete\": true,\n                \"edit\": true,\n                \"archive\": true,\n                \"publish\": true,\n                \"search\": true,\n                \"pagination\": true,\n                \"schedule\": true\n            }\n        },\n        \"4\": {\n            \"page\": true,\n            \"actions\": {\n                \"date\": true,\n                \"select\": true,\n                \"delete\": true,\n                \"pagination\": true\n            }\n        },\n        \"5\": {\n            \"page\": true,\n            \"actions\": {\n                \"date\": true,\n                \"select\": true,\n                \"pagination\": true,\n                \"view\": true\n            }\n        },\n        \"6\": {\n            \"page\": true,\n            \"actions\": {\n                \"select\": true,\n                \"pagination\": true,\n                \"add\": true,\n                \"edit\": true,\n                \"delete\": true,\n                \"search\": true\n            }\n        },\n        \"7\": {\n            \"page\": true,\n            \"actions\": {\n                \"language\": true\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{cms_url}}/api/userAccess?id=6",
+							"host": [
+								"{{cms_url}}"
+							],
+							"path": [
+								"api",
+								"userAccess"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "signalNotification",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsInVzZXJuYW1lIjoiZXZlLmhvbHQiLCJpYXQiOjE3MjU1MzEwNjcsImV4cCI6MTcyNjEzNTg2N30.V-egLz501dN5vuxUxX2LQ8X5vO0pDdpjZXZA3m2vfoc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\":\"f\", \"message\": \"f\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{cms_url}}/api/send-notification?id=1",
+					"host": [
+						"{{cms_url}}"
+					],
+					"path": [
+						"api",
+						"send-notification"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1"
+						}
+					]
+				},
+				"description": "Path: `notification/pushNotification.js`  \nControllerName: `pushNotificationController`"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		},
+		{
+			"key": "cms_url",
+			"value": "http://localhost:3008"
+		},
+		{
+			"key": "userId",
+			"value": "10"
+		},
+		{
+			"key": "2",
+			"value": "{{userId}}"
+		}
+	]
+}

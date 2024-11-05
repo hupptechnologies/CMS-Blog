@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* App.css or your preferred stylesheet */
+
+.rich-text-editor {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+.toolbar {
+  margin-bottom: 10px;
+}
+
+.toolbar button {
+  font-size: 14px;
+  margin-right: 10px;
+  padding: 6px 12px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.toolbar button:hover {
+  background-color: #e0e0e0;
+}
+
+.editor-container {
+  border: 1px solid #ccc;
+  min-height: 200px;
+  padding: 10px;
+}
+
+.DraftEditor-root {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.DraftEditor-editorContainer {
+  border: none !important;
+}
+
+.DraftEditor-editorContainer:focus {
+  outline: none;
+  border: 1px solid #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.main-blog-section ul,
+menu {
+  list-style: disc;
+  margin: 10px;
+}
+
+.user-statistics {
+  padding: 20px;
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  width: 100%;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+.user-statistics,
+.recent-activity {
+  margin-bottom: 20px;
+  width: 80%;
+  max-width: 1200px;
+}
+
+.user-profile .profile-pic {
+  width: 200px;
+  max-height: 200px;
+  display: inline-block;
+}
+
+.user-profile .file-upload {
+  display: none;
+}
+.user-profile .circle {
+  border-radius: 100% !important;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+.user-profile img {
+  max-width: 100%;
+  height: auto;
+}
+.user-profile .p-image {
+  position: absolute;
+  top: 100px;
+  right: 150px;
+  color: #666666;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.user-profile .p-image:hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.user-profile .upload-button {
+  font-size: 1.2em;
+}
+
+.user-profile .upload-button:hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #999;
+}
+
+.json-view-container {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.date-picker-custom .today {
+  width: 25px;
+  height: 26px;
+  line-height: 32px;
+  border: 1px solid #000000;
+  border-radius: 3px;
+  box-shadow: inset 0 6px 0 #000000;
+  text-align: center;
+  color: #FFFFFF;
+  background: #000000;
+  position: relative;
+}
+
+.date-picker-custom .today:after {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  box-shadow: 0 1px 0 #FFFFFF;
+  content: '';
+}
