@@ -85,3 +85,36 @@ We provide a Postman collection that you can import to test the APIs easily. Thi
 
 - POST /translate: Creates a new translation entry. Requires the user to be authenticated and have admin permissions.
 - GET /translate: Fetches all translation entries. No authentication required.
+
+
+# App Interface Walkthrough
+
+## DashboardPage
+![DashboardPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805421/gmb5evrxhk0xemvqld1e.png)
+
+## CreateBlogPage
+![CreateBlogPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805501/jgyywfqgyybcgwaxdz2y.png)
+
+## AllBlogPostPage
+![AllBlogPostPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805442/mtuvnvsra7mp1qmhqjpc.png)
+
+## BlogPostPage
+![BlogPostPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805529/gixr9vufcwnqubov7gqc.png)
+
+## BlogDetailPage
+![BlogDetailPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805685/jxj6vduq4ufku5eljguc.png)
+
+## CategoriesPage
+![CategoriesPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805635/j1oncoyofhysmelojfa0.png)
+
+## ActivityPage
+![ActivityPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805555/evbyuywqobb9ltnf32ah.png)
+
+## APILogPage
+![APILogPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805584/q5yo2cbteiyyzp8jtqvb.png)
+
+## AccessControlPage
+![AccessControlPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805476/mmxtp38adtqsy7fugtfi.png)
+
+## LaunguageTranslationPage
+![LaunguageTranslationPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805660/z8pppcotflzhogdby5hz.png)
