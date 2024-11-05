@@ -17,4 +17,16 @@ const sequelize = new Sequelize(
   config
 );
 
+async function connectDB() {
+  try {
+    await sequelize.authenticate();
+    console.log('Connection to the database has been established successfully.');
+    await sequelize.sync({ force: false });
+    console.log('Database synced successfully (if models exist).');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
+}
+connectDB();
+
 module.exports = sequelize;
