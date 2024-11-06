@@ -144,7 +144,6 @@ const BlogPostComponent = ({ searchTerm }) => {
   };
 
   const handleAccess = (actionName) => {
-    console.log(hasAccess({ pageNumber: 3, access, actionName }));
     return hasAccess({ pageNumber: 3, access, actionName });
   };
 
