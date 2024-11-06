@@ -10,7 +10,7 @@ const cronJob = require("./schedulers/blogScheduler");
 const { insertLogEntry } = require('./databaseHelper');
 
 const app = express();
-const port = 3008;
+const port = process.env.APP_PORT || 3008;
 const allowedOrigins = ["http://localhost:3001", "http://localhost:3000", "http://localhost:3008", "http://192.168.1.64:3000"];
 
 // Use Helmet to secure HTTP headers
