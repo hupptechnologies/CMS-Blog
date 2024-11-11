@@ -86,7 +86,7 @@ const UpdateModalComponent = ({
                     <button
                       onClick={() => handleSubmit(info?.type)}
                       type="button"
-                      style={{ backgroundColor: info?.color === 'purple-700' ? 'purple' : '' }}
+                      style={{ backgroundColor: info?.color === 'purple-700' ? 'purple' : info?.color === 'red-700' ? 'red' : info?.color === 'green-700' ? 'green' : '' }}
                       className={`w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-${info?.color} text-base font-medium text-white hover:bg-${info?.color} focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-${info?.color} sm:ml-3 sm:w-auto sm:text-sm`}
                     >
                       {capitalizeFirstLetter(info?.type)}
