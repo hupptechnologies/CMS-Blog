@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Container } from 'react-bootstrap';
+import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logo from '../new/header/Logo';
 import { SocialIcons } from '../new/footer/FooterBottom';
 import { useDispatch } from 'react-redux';
@@ -10,6 +12,7 @@ import styles from '../new/contactus/contact.module.css';
 const FormComponent = ({ title, pathObj, type }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const [passwordVisible, setPasswordVisible] = useState(false);
   const [formData, setFormData] = useState({
     email: '',
     username: '',
@@ -75,14 +78,24 @@ const FormComponent = ({ title, pathObj, type }) => {
                     required
                   />
                 )}
-                <input
-                  type="password"
-                  placeholder="*****"
-                  name="password"
-                  value={formData.password}
-                  onChange={handleChange}
-                  required
-                />
+                <div className="relative">
+                  <input
+                    type={passwordVisible ? 'text' : 'password'}
+                    placeholder="*****"
+                    name="password"
+                    value={formData.password}
+                    onChange={handleChange}
+                    required
+                    className="border p-1 rounded w-full"
+                  />
+                  <button
+                    type="button"
+                    onClick={() => setPasswordVisible(!passwordVisible)}
+                    className="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500"
+                  >
+                    <FontAwesomeIcon icon={passwordVisible ? faEyeSlash : faEye} />
+                  </button>
+                </div>
                 <button type="submit">{pathObj?.path === '/login' ? 'Sign up' : 'Log in'}</button>
               </form>
             </div>
