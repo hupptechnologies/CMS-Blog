@@ -56,12 +56,13 @@ CREATE TABLE categories (
 
 ```
 CREATE TABLE log (
-  id SERIAL PRIMARY KEY,
+  id SERIAL,
   level VARCHAR(50) NOT NULL,
   message TEXT NOT NULL,
   additional_info JSONB DEFAULT '{}'::jsonb,
   created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP
+  updated_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (id, created_at) -- Include created_at in the primary key
 ) PARTITION BY RANGE (created_at);
 ```
 

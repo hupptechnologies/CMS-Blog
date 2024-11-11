@@ -1,4 +1,5 @@
 const { Sequelize } = require("sequelize");
+const { createFunctionQuery, createLogTableQuery, checkLogTableExistQuery } = require("./query");
 require('dotenv').config();
 
 const config = {
@@ -21,6 +22,12 @@ async function connectDB() {
   try {
     await sequelize.authenticate();
     console.log('Connection to the database has been established successfully.');
+    const [tableExists] = await sequelize.query(checkLogTableExistQuery);
+    if (!tableExists[0].exists) {
+      await sequelize.query(createLogTableQuery);
+      await sequelize.query(createFunctionQuery);
+      console.log("Log table created successfully.");
+    };
     await sequelize.sync({ force: false });
     console.log('Database synced successfully (if models exist).');
   } catch (error) {
