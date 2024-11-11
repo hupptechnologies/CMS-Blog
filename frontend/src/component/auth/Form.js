@@ -63,6 +63,7 @@ const FormComponent = ({ title, pathObj, type }) => {
                   name="username"
                   value={formData.username}
                   onChange={handleChange}
+                  required
                 />
                 {pathObj?.path === '/login' && (
                   <input
@@ -71,6 +72,7 @@ const FormComponent = ({ title, pathObj, type }) => {
                     value={formData.email}
                     onChange={handleChange}
                     placeholder="Enter your email"
+                    required
                   />
                 )}
                 <input
@@ -79,6 +81,7 @@ const FormComponent = ({ title, pathObj, type }) => {
                   name="password"
                   value={formData.password}
                   onChange={handleChange}
+                  required
                 />
                 <button type="submit">{pathObj?.path === '/login' ? 'Sign up' : 'Log in'}</button>
               </form>
