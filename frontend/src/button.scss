@@ -1,7 +1,7 @@
 $neutral-color: #AAB2BD;
 $active-color: #0076FF;
-$like-color: #E8F5E9;
-$plus-color: #8CC152;
+$like-color: #60a5fa;
+$plus-color: #60a5fa;
 $fav-color: #F6BB42;
 $thumb-color: #3b5998;
 
@@ -29,7 +29,7 @@ button {
 .button {
   z-index: 1;
   margin: .5em;
-  color: $neutral-color;
+  color: $plus-color;
   font-size: 1rem;
   padding: .2em .6em;
   max-width: 2.4em;

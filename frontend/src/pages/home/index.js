@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
-import MainSectionComponent from '../../component/home/MainSection';
+import FirstSection from '../../component/new/section';
 import BlogCardComponent from '../../component/blog/BlogCard';
+import FeaturedArticles from '../../component/new/articles';
+import TopCategory from '../../component/new/category';
 import { useDispatch } from 'react-redux';
 import { fetchAllBlogsAsync } from '../../redux/blog';
 import { fetchCategoriesAsync } from '../../redux/category';
@@ -25,7 +27,9 @@ const HomePage = () => {
   }, [dispatch]);
   return (
     <>
-      <MainSectionComponent />
+      <FirstSection />
+      <FeaturedArticles />
+      <TopCategory />
       <BlogCardComponent />
     </>
   );

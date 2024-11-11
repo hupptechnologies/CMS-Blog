@@ -15,10 +15,10 @@ const UpdateModalComponent = ({
       {showModal && (
         <div className="flex items-center justify-center">
           <div>
-            <div x-show="showModal" className="fixed inset-1 transition-opacity" aria-hidden="true">
+            <div className="fixed inset-1 transition-opacity" aria-hidden="true">
               <div className="absolute inset-0 bg-gray-500 opacity-75"></div>
             </div>
-            <div x-show="showModal" className="fixed z-10 inset-0 overflow-y-auto">
+            <div className="fixed z-10 inset-0 overflow-y-auto">
               <div className="flex items-end justify-center pt-4 px-4 pb-20 text-center sm:block sm:p-0">
                 <div
                   className="w-full inline-block align-bottom bg-white rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full"

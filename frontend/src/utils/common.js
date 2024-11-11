@@ -78,9 +78,9 @@ export const errorStatus = (status) => {
   }
 };
 
-export const calculateTimePendingPercentage = (updated_at) => {
+export const calculateTimePendingPercentage = (date) => {
   const now = new Date().getTime();
-  const updatedAtTime = new Date(updated_at).getTime();
+  const updatedAtTime = new Date(date).getTime();
   const elapsedTime = now - updatedAtTime;
   const totalDuration = 24 * 60 * 60 * 1000;
   const percentageUsed = Math.min((elapsedTime / totalDuration) * 100, 100);

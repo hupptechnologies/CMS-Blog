@@ -8,10 +8,11 @@ CREATE TABLE activities (
     updated_at TIMESTAMP WITHOUT TIME ZONE
 );
 
+CREATE TYPE blog_status AS ENUM ('draft', 'scheduled', 'published', 'archived', 'deleted');
 CREATE TABLE blog_manage (
     id INTEGER,
     blog_id INTEGER,
-    status USER-DEFINED,
+    status blog_status NOT NULL DEFAULT 'draft',
     created_at TIMESTAMP WITHOUT TIME ZONE,
     updated_at TIMESTAMP WITHOUT TIME ZONE
 );
@@ -30,21 +31,23 @@ CREATE TABLE blogs (
     updated_at TIMESTAMP WITH TIME ZONE
 );
 
+CREATE TYPE category_status AS ENUM ('active', 'inactive');
 CREATE TABLE categories (
     id INTEGER,
     name TEXT,
     description TEXT,
-    status USER-DEFINED,
+    status category_status NOT NULL DEFAULT 'active',
     created_at TIMESTAMP WITH TIME ZONE,
     updated_at TIMESTAMP WITH TIME ZONE
 );
 
+CREATE TYPE comment_status AS ENUM ('delivered', 'pending', 'deleted');
 CREATE TABLE comments (
     id INTEGER,
     blog_id INTEGER,
     author_id INTEGER,
     content TEXT,
-    status USER-DEFINED,
+    status comment_status NOT NULL DEFAULT 'pending',
     created_at TIMESTAMP WITHOUT TIME ZONE,
     updated_at TIMESTAMP WITHOUT TIME ZONE
 );
@@ -119,14 +122,16 @@ CREATE TABLE translations (
     updated_at TIMESTAMP WITHOUT TIME ZONE
 );
 
+CREATE TYPE user_status AS ENUM ('active', 'inactive', 'banned');
+CREATE TYPE user_role AS ENUM ('user', 'admin', 'moderator');
 CREATE TABLE users (
     id INTEGER,
     username VARCHAR(50),
     email VARCHAR(100),
     password VARCHAR(255),
-    role USER-DEFINED,
+    role user_role NOT NULL DEFAULT 'user',
     img VARCHAR(255),
-    status USER-DEFINED,
+    status user_status NOT NULL DEFAULT 'active',
     has_seen_welcome_message BOOLEAN,
     access JSONB,
     created_at TIMESTAMP WITH TIME ZONE,

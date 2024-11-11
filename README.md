@@ -85,7 +85,7 @@ To start both the frontend and backend simultaneously, you can use the following
 
 ----
 ## AllBlogPostPage
-![AllBlogPostPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805442/mtuvnvsra7mp1qmhqjpc.png)
+![AllBlogPostPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1731050013/win4y6tonihsgamhevwn.png)
 
 ----
 ## BlogPostPage
@@ -93,7 +93,7 @@ To start both the frontend and backend simultaneously, you can use the following
 
 ----
 ## BlogDetailPage
-![BlogDetailPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1730805685/jxj6vduq4ufku5eljguc.png)
+![BlogDetailPage](https://res.cloudinary.com/dx12uvyye/image/upload/v1731050057/ywwmhups9yqzxxrcofhl.png)
 
 ----
 ## CategoriesPage

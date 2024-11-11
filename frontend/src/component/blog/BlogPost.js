@@ -53,16 +53,14 @@ const BlogPostComponent = () => {
 
   return (
     <>
-      <div className="flex items-center p-4 main-blog-section">
+      <div className="flex items-center p-4 main-blog-section" style={{ margin: 'auto', maxWidth: '1320px' }}>
         {post && (
           <div
             className="mt-6"
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(2, 2fr)',
-              gap: '5rem',
-              marginRight: '10rem',
-              marginLeft: '10rem'
+              gap: '5rem'
             }}
           >
             <div>

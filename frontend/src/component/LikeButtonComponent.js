@@ -9,7 +9,8 @@ const LikeButtonComponent = ({ className = '', iconClassName = 'fa fa-heart', da
   const [isActive, setIsActive] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.stopPropagation();
     if (isLoading) return;
     if (isActive) {
       setIsActive(false);

@@ -1,0 +1,123 @@
+.bg {
+    background-color: var(--backGround-color-main);
+    padding: 70px 0;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.pTags {
+    background-color: var(--card-bg-color);
+    color: var(--color-third);
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pTagsIcon {
+    font-size: 30px;
+    color: var(--red-color);
+}
+
+.pTagsTitle {
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.card {
+    background-color: var(--card-bg-color);
+    padding: 20px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+}
+
+.cardImage {
+    height: 65px;
+    width: 65px;
+    border-radius: 50%;
+}
+
+.cardInfo {
+    color: var(--color-third);
+    cursor: pointer;
+    transition: .3s;
+    text-decoration: none;
+}
+
+.cardTitle {
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.cardTitle:hover {
+    text-decoration: underline;
+}
+
+.cardCount {
+    font-size: 15px;
+    color: var(--color-sec);
+    transition: .3s;
+
+}
+
+.cardInfo:hover,
+.cardInfo:hover .cardCount {
+    color: var(--red-color);
+}
+
+.cardIcon {
+    all: unset;
+    color: var(--color-sec);
+    padding: 6px 9px;
+    background-color: var(--backGround-color-main);
+    border-radius: 50%;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.card:hover .cardIcon {
+    color: white;
+    background-color: var(--red-color);
+}
+
+.viewAll {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.viewAll h1:hover {
+    text-decoration: underline;
+    color: var(--red-color);
+}
+
+@media (max-width: 1050px) {
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media (max-width: 650px) {
+    .container {
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .pTagsTitle {
+        font-size: 1.3rem;
+    }
+    .cardTitle {
+        font-size: 1.2rem;
+    }
+}

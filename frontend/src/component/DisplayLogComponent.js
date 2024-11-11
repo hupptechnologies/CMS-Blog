@@ -19,7 +19,7 @@ const DisplayLogComponent = ({
       <div className="w-full px-10 py-8 bg-white rounded-lg shadow-xl">
         <button
           onClick={handleBack}
-          className={`inline-flex items-center m-4 px-4 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500`}
+          className='inline-flex items-center m-4 px-4 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500'
         >
           <svg
             className="w-3.5 h-3.5 me-2 rtl:rotate-180"

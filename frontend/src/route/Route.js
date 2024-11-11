@@ -5,9 +5,10 @@ import AuthPage from '../pages/auth';
 import DashboardPage from '../pages/dashboard';
 import NotificationComponent from '../pages/notification';
 import NoPage from '../pages/noPage';
-import NavbarComponent from '../component/home/Navbar';
+import ScrollToTop from '../pages/scrollToTop.js';
+import Header from '../component/new/header';
 import BlogPostComponent from '../component/blog/BlogPost';
-import UserProfileComponent from '../component/home/UserProfileComponent';
+import ArrowToTop from '../component/new/arrow/index.js';
 import AnyUserLogoutNotification from '../AnyUserLogoutNotification';
 import WelcomeComponent from '../welcome.js';
 import useAnalytics from '../useAnalytic.js';
@@ -15,6 +16,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getAllUserDetail } from '../redux/auth/slice';
 import { getAllTranslateDetail } from '../redux/translation/slice';
 import { fetchTranslationAsync, fetchTranslationTypesAsync } from '../redux/translation';
+import MainFooter from '../component/new/footer/index.js';
+import ContactUs from '../component/new/contactus/index.js';
 
 const IsAuthenticated = () => {
   const {
@@ -39,14 +42,14 @@ const App = () => {
   useAnalytics();
   const dispatch = useDispatch();
   const { translations } = useSelector(getAllTranslateDetail);
-  const { user } = useSelector(getAllUserDetail);
+  const { user, theme } = useSelector(getAllUserDetail);
   useEffect(() => {
-    dispatch(fetchTranslationTypesAsync({ data: { type: 'all' } }));
-    dispatch(fetchTranslationAsync({ data: { language: 'en-GB' } }));
+    dispatch(fetchTranslationTypesAsync({ data: { type: 'all' }}));
+    dispatch(fetchTranslationAsync({ data: { language: 'en-GB' }}));
     localStorage.setItem('lan', 'en-GB');
   }, [dispatch]);
   return (
-    <>
+    <div data-theme={theme}>
       {Object.entries(user).length > 0 &&
       !user?.has_seen_welcome_message &&
       (user?.role === 'admin' || user?.role === 'moderator') ? (
@@ -61,9 +64,11 @@ const App = () => {
                 path="/"
                 element={
                   <>
-                    <NavbarComponent />
                     <PrivateRoute allowedRoles={['user']}>
+                      <Header />
                       <HomePage />
+                      <MainFooter />
+                      <ArrowToTop />
                     </PrivateRoute>
                   </>
                 }
@@ -74,21 +79,11 @@ const App = () => {
                 path="/blog/:id"
                 element={
                   <>
-                    <NavbarComponent />
+                    <Header />
                     <PrivateRoute allowedRoles={['user']}>
                       <BlogPostComponent />
                     </PrivateRoute>
-                  </>
-                }
-              />
-              <Route
-                path="/user/profile"
-                element={
-                  <>
-                    <NavbarComponent />
-                    <PrivateRoute allowedRoles={['user']}>
-                      <UserProfileComponent />
-                    </PrivateRoute>
+                    <MainFooter />
                   </>
                 }
               />
@@ -100,18 +95,20 @@ const App = () => {
                   </PrivateRoute>
                 }
               />
+              <Route path="/contactus" element={<ContactUs />} />
               <Route path="*" element={<NoPage />} />
             </Routes>
           )}
         </>
       )}
-    </>
+    </div>
   );
 };
 
 const RouterContainer = () => (
   <BrowserRouter>
     <App />
+    <ScrollToTop />
   </BrowserRouter>
 );
 

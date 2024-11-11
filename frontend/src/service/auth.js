@@ -33,7 +33,7 @@ export const getAllUsers = ({ type, id, search, startDate, endDate }, token) => 
   return requestInstance.get(url);
 };
 
-export const logoutLoggedInUser = ({ data: { id } }, token) => {
+export const logoutLoggedInUser = ({ data: { id }}, token) => {
   const requestInstance = backendAPI(token);
   return requestInstance.post(`user/logout?id=${id}`);
 };

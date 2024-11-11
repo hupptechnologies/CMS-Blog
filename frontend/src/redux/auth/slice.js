@@ -9,7 +9,8 @@ import {
 const initialState = {
   user: {},
   loading: false,
-  token: null
+  token: null,
+  theme: ''
 };
 
 const authSlice = createSlice({
@@ -26,6 +27,13 @@ const authSlice = createSlice({
     },
     handleUpdateUser: (state, { payload }) => {
       state.user.access = payload.access;
+    },
+    handleTheme: (state) => {
+      if (state.theme === 'dark') {
+        state.theme = '';
+      } else {
+        state.theme = 'dark';
+      }
     }
   },
   extraReducers: (builder) => {
@@ -65,7 +73,7 @@ const authSlice = createSlice({
   }
 });
 
-export const { handleLogoutUser, handleStopWelcome, handleUpdateUser } = authSlice.actions;
+export const { handleLogoutUser, handleStopWelcome, handleUpdateUser, handleTheme } = authSlice.actions;
 
 export const getAllUserDetail = (state) => state.auth;
 

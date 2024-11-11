@@ -1,0 +1,46 @@
+.bg {
+    background-color: var(--backGround-color-main);
+}
+
+.container {
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+    max-width: 1320px !important;
+}
+
+.hr {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background-color: rgba(155, 154, 154, 0.4);
+    padding: 0;
+    margin: 0;
+}
+
+.logoAndCpr {
+    text-align: center;
+    color: var(--color-sec);
+}
+
+.socialIcons {
+    display: flex;
+    gap: 30px;
+}
+
+.socialLink {
+    color: var(--color-sec);
+    font-size: 18px;
+}
+
+.socialLink:hover {
+    color: var(--red-color);
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}

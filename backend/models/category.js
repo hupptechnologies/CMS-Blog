@@ -18,6 +18,11 @@ const Categories = sequelize.define(
       type: DataTypes.TEXT,
       allowNull: false,
     },
+    img: {
+      type: DataTypes.STRING(255),
+      allowNull: true,
+      defaultValue: 'https://quirvibe.vercel.app/assets/Technology-ABmopdN_.webp'
+    },
     status: {
       type: DataTypes.ENUM("active", "inactive"),
       allowNull: false,

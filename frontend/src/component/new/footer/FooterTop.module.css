@@ -1,0 +1,72 @@
+.bg {
+    background-color: var(--backGround-color-main);
+    padding-bottom: 70px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    max-width: 1320px !important;
+    margin: auto;
+}
+
+.logoFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.splachImage {
+    width: 35px;
+    margin: 5px;
+}
+
+.contactUsbtn {
+    all: unset;
+    background-color: var(--red-color);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    border: 1px solid var(--red-color);
+    transition: .3s;
+    cursor: pointer;
+}
+
+.backbtn {
+    all: unset;
+    color: var(--color);
+    padding: 12px 25px;
+    border-radius: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    transition: .3s;
+    cursor: pointer;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+.contactUsbtn:hover {
+    background-color: var(--backGround-color-main);
+    color: var(--red-color);
+}
+
+.backbtn:hover {
+    background-color: var(--backGround-color-main);
+    color: var(--red-color);
+}
+
+@media (max-width: 576px) {
+    .container {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .contactUsbtn {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+}

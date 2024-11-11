@@ -1,0 +1,16 @@
+.bg {
+    background-color: var(--backGround-color-sec);
+    padding: 20px 0px;
+    border-bottom-width: 1px;
+    border-color: var(--border-color);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1320px;
+    margin-right: auto;
+    margin-left: auto;
+}
+

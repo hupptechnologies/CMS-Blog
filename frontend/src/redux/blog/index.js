@@ -119,8 +119,7 @@ export const viewCurrentBlogAsync = createAsyncThunk(
       }
       return fulfillWithValue();
     } catch (err) {
-      const { message } = err.response.data;
-      showErrorNotification(message);
+      console.log(err);
       return rejectWithValue();
     }
   }

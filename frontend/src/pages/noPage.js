@@ -12,7 +12,7 @@ const NoPage = () => {
           </div>
           <div className="content">
             <h1 className="main-heading">This page is gone.</h1>
-            <p>...maybe the page you're looking for is not found or never existed.</p>
+            <p>...maybe the page you&apos;re looking for is not found or never existed.</p>
             <Link to="/login">
               <button>
                 Back to home <i className="far fa-hand-point-right"></i>

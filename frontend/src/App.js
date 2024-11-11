@@ -3,6 +3,7 @@ import RouterContainer from './route/Route';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 import { persistor, store } from './redux/store';
+import './styles/app.css';
 
 function App() {
   return (
