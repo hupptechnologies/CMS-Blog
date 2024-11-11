@@ -117,9 +117,9 @@ const Navbar = ({ toggleModal }) => {
             onClick={toggleTheme}>
             {isDarkMode ? <FontAwesomeIcon icon={faSun} /> : <FontAwesomeIcon icon={faMoon} />}
           </button>
-          <Link to="/login" rel="nofollow" className={styles.signInLink}>
+          {!token && <Link to="/login" rel="nofollow" className={styles.signInLink}>
             Sign In
-          </Link>
+          </Link>}
           {token && (
             <div onClick={toggleModal} className="flex cursor-pointer items-center -space-x-4">
               <img
